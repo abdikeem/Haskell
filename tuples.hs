@@ -9,4 +9,14 @@ eg:
 -ghci> zip [1 .. 5] ["one", "two", "three", "four", "five"]
 [(1,"one"),(2,"two"),(3,"three"),(4,"four"),(5,"five")] 
 
+Quiz:
+    solve a puzzle, among the numbers one to eight when does the smaller number have longer word 
+Answer:
+Step 1 - let numbers = [1..8]
+step 2 - let words = ["one", "two", "three", "four", "five", "six", "seven", "eight"]
+step 3 - let pairs = zip numbers words
+step 4 - [(fst p , fst q) | p <- pairs, q <-pairs]
+step 5 - [(fst p , fst q) | p <- pairs, q <-pairs, fst p < fst q]
+step 6 - [(fst p , fst q) | p <- pairs, q <-pairs, fst p < fst q, length(snd p) > length(snd q)]
+
 -}
